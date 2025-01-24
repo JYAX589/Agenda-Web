@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <title>Login contactos</title>
+  <style>
+    img {
+      margin-left: 17%;
+      border-radius: 55%;
+      transform: translateY(-20px);
+    }
+
+    .login-style {
+      border-radius: 5%;
+      width: 90%;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body class="login-style">
+  <figure>
+    <img src="images/imgInicio.jpg" />
+  </figure>
+  <form id="loginform" class="box">
+    <div class="field">
+      <label class="label" id="Email">Email</label>
+      <div class="control">
+        <input id="email" class="input" name="email" type="email" placeholder="ejm: alex@example.com" required />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" id="Password">Password</label>
+      <div class="control">
+        <input id="password" class="input" name="password" type="password" placeholder="********" required />
+      </div>
+    </div>
+    <button onclick="loginvalidacion()" class="button is-primary" type="submit">
+      Sign in
+    </button>
+  </form>
+
+  <script>
+    function loginvalidacion(){
+      if(!email || !password){
+        return
+      }
+    }
+  </script>
+
+  <script type="module">
+    import { dataform } from './contactoController.js';
+
+    dataform();
+  </script>
+
+</body>
+
+</html>
