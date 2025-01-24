@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <title>Otra Página</title>
+</head>
+
+<style>
+  .container{
+    margin-top: 220px;
+  }
+
+  .imgContacto{
+    border-radius: 55%;
+    position: relative;
+    top:40px; left: 35%;
+}
+</style>
+
+<body>
+  <img class="imgContacto" src="/images/imgInicio.jpg">
+  <div class="container">
+    <h1 class="title">Datos del formulario</h1>
+    <div class="field">
+      <label class="label">Email Ingresado</label>
+      <div class="control">
+        <input id="email-output" class="input" type="text" readonly />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password Ingresado</label>
+      <div class="control">
+        <input id="password-output" class="input" type="text" readonly />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const formData = localStorage.getItem('formData');
+    if (formData) {
+      const data = JSON.parse(formData);
+      console.log(data);
+
+      document.getElementById('email-output').value = data.email;
+      document.getElementById('password-output').value = data.password;
+    } else {
+      console.log("No hay datos en el almacenamiento local.");
+    }
+  </script>
+</body>
+
+</html>
