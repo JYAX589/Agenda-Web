@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Lista de Pendientes</title>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <form>
+                <div class="field">
+                    <label class="label" for="nombrePendiente">Nombre del pendiente</label>
+                    <div class="control">
+                        <input class="input" type="text" id="nombrePendiente" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="prioridadPendiente">Ajusta la prioridad</label>
+                    <div class="control">
+                        <input class="input" type="number" id="prioridadPendiente" placeholder="0" required>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button is-success" type="submit" id="btnAgregarPendiente" onclick="agregarPendiente()">Registrar nuevo pendiente</button>
+                    <button class="button is-info is-hidden" type="submit" id="btnEditarPendiente" onclick="actualizarPendiente()">Actualizar pendiente</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="table-container">
+                <table class="table is-fullwidth is-striped is-hoverable" id="tablaPendientes">
+                    <thead>
+                        <tr>
+                            <th>Nombre del pendiente</th>
+                            <th>Prioridad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <script type="text/javascript" src="/listaPendientes.js"></script>
+</body>
+</html>
